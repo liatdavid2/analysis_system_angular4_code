@@ -1,0 +1,180 @@
+<mat-drawer-container  class="example-container"  >
+
+        <div class="example-sidenav-content" style="z-index:10000; float: right;">
+          <button type="button" mat-button (click)="drawer.toggle()">
+            <mat-icon style="height: 25px;">menu</mat-icon>
+      
+          </button>
+        </div>
+       
+
+    <kendo-grid #grid  
+    [data]="gridView "
+    [skip]="skip"
+    [pageSize]="pageSize"
+    [scrollable]="'virtual'"
+    [rowHeight]="35"
+    [height]="chartHeight"
+    filterable="menu" [filter]="state.filter" (dataStateChange)="dataStateChange($event)"
+    [selectable]="true"
+
+    [kendoGridSelectBy]="mySelectionKey"
+    [selectedKeys]="mySelection"
+    (cellClick)="gridUserSelectionChange(grid, $event)"
+    (pageChange)="pageChange($event)"
+
+    [sortable]="{
+      allowUnsort: allowUnsort,
+      mode: multiple ? 'multiple' : 'single'
+      }"
+    [sort]="sort"
+    (sortChange)="sortChange($event)"
+    >
+    <kendo-grid-column field="customer_id"  title="customer_id" [width]="100"></kendo-grid-column>
+
+    <kendo-grid-column field="LAST_NAME" title="lat" [width]="100" filter="numeric" ></kendo-grid-column>
+    <kendo-grid-column field="FIRST_NAME" title="lng" [width]="100" filter="numeric"></kendo-grid-column>
+    <kendo-grid-column field="street" title="hMajor"[width]="100" ></kendo-grid-column>
+    <kendo-grid-column field="city" title="hMinor"[width]="100" ></kendo-grid-column>
+    
+    <kendo-grid-column field="ttttt"  title="Angle" [width]="100"></kendo-grid-column>
+    <kendo-grid-column field="yyy" title="yyy" [width]="40"></kendo-grid-column>
+    <kendo-grid-column field="home_phone" title="home_phone" [width]="80"></kendo-grid-column>
+    <kendo-grid-column field="work_phone" title="work_phone"[width]="80" ></kendo-grid-column>
+    <kendo-grid-column field="email" title="email" [width]="40"></kendo-grid-column>
+    
+    <kendo-grid-column field="aaa"  title="aaa"[width]="40"></kendo-grid-column>
+    <kendo-grid-column field="bbb" title="bbb" [width]="40"></kendo-grid-column>
+    <kendo-grid-column field="ccc" title="ccc" [width]="40"></kendo-grid-column>
+    <kendo-grid-column field="ddd" title="ddd" [width]="40"></kendo-grid-column>
+    <kendo-grid-column field="fff" title="fff" [width]="40"></kendo-grid-column>
+    
+    <kendo-grid-column field="ggg"  title="ggg" [width]="40"></kendo-grid-column>
+    <kendo-grid-column field="hhh" title="hhh" [width]="40"></kendo-grid-column>
+    <kendo-grid-column field="iii" title="iii" [width]="40"></kendo-grid-column>
+    <kendo-grid-column field="jjj" title="jjj" [width]="40"></kendo-grid-column>
+    <kendo-grid-column field="kkk" title="kkk" [width]="40"></kendo-grid-column>
+    
+    
+    
+    <kendo-grid-excel fileName="Products.xlsx"></kendo-grid-excel>
+    </kendo-grid>
+
+
+      
+        <mat-drawer #drawer class="example-sidenav" mode="side" position="end">
+          <p matLine>
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+      
+              <mat-icon class="icon_marging_left">more_vert</mat-icon>
+            </button>
+          </p>
+          <p matLine>
+            <mat-menu #menu="matMenu">
+      
+              <button mat-menu-item (click)="measureDistance()">
+                <span>Measure Distance</span>
+              </button>
+      
+              <button mat-menu-item (click)="addItemByCluserIdAndType(cluster,2)">
+                <span>Change Map</span>
+              </button>
+              <button mat-menu-item (click)="addItemByCluserIdAndType(cluster,3)">
+                <span>Center map about a selected point</span>
+              </button>
+              <button mat-menu-item (click)="addItemByCluserIdAndType(cluster,4)">
+                <span>Lasso</span>
+              </button>
+              <hr>
+              <button mat-menu-item [matMenuTriggerFor]="menu2">
+                <span>Lasso - Options and filters</span>
+                <mat-menu #menu2="matMenu">
+      
+                  <button mat-menu-item (click)="addItemByCluserIdAndType(cluster,6)">
+                    <span>Create cluster based on selected elements</span>
+                  </button>
+      
+                  <button mat-menu-item (click)="addItemByCluserIdAndType(cluster,2)">
+                    <span>Highlight</span>
+                </button>
+
+                  <button mat-menu-item (click)="addItemByCluserIdAndType(cluster,4)">
+                    <span>Open in a map</span>
+                  </button>
+      
+
+      
+                  <button mat-menu-item (click)="addItemByCluserIdAndType(cluster,7)">
+                    <span>Remove from cluster</span>
+                  </button>
+                </mat-menu>
+      
+      
+              </button>
+              <hr>
+              <button mat-menu-item (click)="loadselectedfromtable()">
+                <span>load selected points</span>
+              </button>
+      
+              <button mat-menu-item (click)="addItemByCluserIdAndType(cluster,7)">
+                <span>Add Textual Annotation</span>
+              </button>
+              <button mat-menu-item (click)="addItemByCluserIdAndType(cluster,7)">
+                <span>Delete Textual Annotation</span>
+              </button>
+              <button mat-menu-item (click)="addItemByCluserIdAndType(cluster,7)">
+                <span>Draw Silde</span>
+              </button>
+              <button mat-menu-item (click)="addItemByCluserIdAndType(cluster,7)">
+                <span>Report</span>
+              </button>
+      
+            </mat-menu>
+      
+            <span> {{clusterView}} </span>
+      
+          </p>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12">
+                  <select #selectElem (change)="change_table(selectElem.value)" class="dropdown">
+                      <option value="select option">---select---</option>
+                      <option value="type1">type1</option>
+                      <option value="type2">type2</option>
+                  </select>  
+                  <br>
+                    <button (click)="getNextPageFromServer()" class="prevNextBtn">>></button>
+                    <button (click)="getPrevPageFromServer()" class="prevNextBtn"><<</button>
+                    <p>{{startServerPage}} - {{endServerPage}}</p>
+ 
+                    
+                    <button (click)="filterFromServer()" data-toggle="tooltip" title="Hooray!"
+                    class="standardBtn">filter from server</button>
+                    <button (click)="filterFromClient()" class="standardBtn">filter from client</button>  
+              </div>
+      
+            </div>
+      
+          </div>
+      
+        </mat-drawer>
+      
+      
+      
+      </mat-drawer-container>
+      
+      
+      <mat-sidenav-container>
+        <mat-sidenav #sidenav2>
+      
+        </mat-sidenav>
+      </mat-sidenav-container>
+
+
+
+<div >
+ 
+    <div class="row">
+    
+    </div>
+</div>

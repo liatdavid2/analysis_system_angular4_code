@@ -1,0 +1,27 @@
+.colorWhite{
+    color: white
+}
+.mat-drawer {
+    background-color: #193061;
+    background-color: #49474a;
+    color: rgba(0, 0, 0, 0.87);
+    width: 200px;
+    background: #290940;
+}
+.icon_marging_left{
+    color: white;
+    
+}
+.mat-button{
+    color: white;
+}
+.example-sidenav-content{
+    background: #2c2c2e;
+}
+/deep/.mat-drawer-content {
+    background: #2c2c2e;
+    overflow-x: hidden;
+}
+.mat-drawer-container {
+    background: #2c2c2e;
+}

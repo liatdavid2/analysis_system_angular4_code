@@ -1,0 +1,128 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav   >
+
+    <div class="container-fluid" style=" width: 340px;">
+ 
+      <div class="row" style="background: #2d2d2d;padding-left: 15px;    padding-left: 15px;padding-top: 10px;padding-bottom: 10px;">
+        <label class="mat-headline">Analyzes List</label>
+      </div>
+      <div class="row">
+
+        <mat-accordion class="cols-2">
+          <mat-expansion-panel *ngFor="let cluster of clustersList">
+
+            <mat-expansion-panel-header>
+              <div matLine style="width:100%;font-size: 12pt;margin-top: 13px;">
+                {{cluster.CLUSTER_NAME}}
+
+
+
+
+                <button mat-icon-button [matMenuTriggerFor]="menu" style="float: right;">
+                  <mat-icon >more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+
+                  <button mat-menu-item (click)="addItemByCluserIdAndType(cluster,6)">
+                    <mat-icon>pie_chart</mat-icon>
+                    <span class="black">pie Graph</span>
+                  </button>
+
+                  <button mat-menu-item (click)="addItemByCluserIdAndType(cluster,2)">
+                    <mat-icon>bubble_chart</mat-icon>
+                    <span class="black">Scatter Graph</span>
+                  </button>
+                  <button mat-menu-item (click)="addItemByCluserIdAndType(cluster,5)">
+                    <mat-icon>bubble_chart</mat-icon>
+                    <span class="black">Activity Graph</span>
+                  </button>
+                  <button mat-menu-item (click)="addItemByCluserIdAndType(cluster,3)">
+                    <mat-icon>bar_chart</mat-icon>
+                    <span class="black">Histogarm Graph</span>
+                  </button>
+
+                  <!--button mat-menu-item (click)="addItemByCluserIdAndType(cluster,1)">
+                    <mat-icon>list_alt</mat-icon>
+                    <span class="black">Table</span>
+                  </button>
+                  <button mat-menu-item (click)="addItemByCluserIdAndType(cluster,7)">
+                    <mat-icon>place</mat-icon>
+                    <span class="black">Map</span>
+                  </button>
+                  <hr>
+                  <button mat-menu-item (click)="addAnalizeByCluserIdAndType(cluster,7)">
+                    <mat-icon>place</mat-icon>
+                    <span class="black">analysis 1</span>
+                  </button>
+                  <button mat-menu-item (click)="addAnalizeByCluserIdAndType2(cluster,7)">
+                    <mat-icon>place</mat-icon>
+                    <span class="black">analysis 2</span>
+                  </button-->
+                </mat-menu>
+
+              
+
+              </div>
+            </mat-expansion-panel-header>
+        
+          </mat-expansion-panel>
+        </mat-accordion>
+
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+  </mat-sidenav>
+  <button mat-mini-fab class="sidenav-fab" (click)="sidenav.toggle()" id="sidebar">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <gridster [options]="options">
+    <gridster-item class="gridster-item-content" [item]="item" *ngFor="let item of staticDashboard" ngSwitch="{{item.ViewType %8}}" style="padding:0">
+      <h1 *ngIf="!item.hasContent">{{item.label}}</h1>
+      <pie-chart class="container" *ngSwitchCase="'6'" [chartWidth]="item.chartWidth" [chartHeight]="item.chartHeight" class="no_margin_no_padding"></pie-chart>
+      <histogram-graph class="container" *ngSwitchCase="'3'" [chartWidth]="item.chartWidth" [chartHeight]="item.chartHeight" class="no_margin_no_padding"></histogram-graph>
+    
+      <map class="container" *ngSwitchCase="'7'" style="height: 0;overflow-x: hidden;overflow-y: hidden;" 
+      [chartWidth]="item.chartWidth" 
+        [chartHeight]="item.chartHeight" class="no_margin_no_padding"></map>
+
+      <report-nice-edit class="container" *ngSwitchCase="'0'" class="no_margin_no_padding"></report-nice-edit>
+      <time-angle-graph500-k class="container" *ngSwitchCase="'2'" [CluserId]="item.CluserId" [chartWidth]="item.chartWidth" [chartHeight]="item.chartHeight+7" class="no_margin_no_padding"
+     ></time-angle-graph500-k>
+
+      <activity-graph class="container" *ngSwitchCase="'5'" [CluserId]="item.CluserId" [chartWidth]="item.chartWidth" [chartHeight]="item.chartHeight+7" class="no_margin_no_padding"></activity-graph>
+      <div class="button-holder">
+
+        <!--table-from-server *ngSwitchCase="'100'"></table-from-server-->
+        <table-reusing-data-items *ngSwitchCase="'1'" class="container gridster-item-content" [chartWidth]="item.chartWidth" [chartHeight]="item.chartHeight"
+          [CluserId]="item.CluserId" style="-webkit-user-select: text"></table-reusing-data-items>
+
+
+
+        <div class="item-buttons">
+          <button mat-icon-button mat-raised-button class="drag-handler">
+            <mat-icon>open_with</mat-icon>
+          </button>
+
+          <button mat-icon-button mat-raised-button class="remove-button IconStyle" (mousedown)="removeItem($event, item)" (touchstart)="removeItem($event, item)"
+            matTooltip="Remove">
+            <mat-icon class="IconStyle">clear</mat-icon>
+          </button>
+
+
+
+
+        </div>
+
+
+      </div>
+    </gridster-item>
+  </gridster>
+</mat-sidenav-container>

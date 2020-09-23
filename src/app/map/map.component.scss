@@ -1,0 +1,126 @@
+.map{
+    position: absolute;
+    width: 100%;
+    height:600px;
+   margin-top: 10px;
+ 
+}
+#btnsFloats{
+    position: fixed;
+    top: 0;
+    z-index:1000000;
+}
+
+  .my-div-icon {
+    width: 25px;
+    height:25px;
+    background: red;
+    border: 3px dotted black;
+}
+.custom-content svg{
+    height:22px;
+    width:22px;
+    padding-top:4px;
+    position:relative;
+}
+.custom-content.active::before{
+    content: "+";
+    font-weight: bold;
+    color: black;
+    position: absolute;
+    text-align: center;
+    width: 20px;
+    font-size: 22px;
+}
+label{
+    color: white;
+}
+hr {
+    border-top: 1px solid rgb(128, 125, 125);
+    margin: 0;
+}
+
+
+#progress {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    left: 400px;
+    top: 300px;
+    width: 200px;
+    height: 20px;
+    margin-top: -20px;
+    margin-left: -100px;
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 4px;
+    padding: 2px;
+  }
+  
+  #progress-bar {
+    width: 0;
+    height: 100%;
+    background-color: #76A6FC;
+    border-radius: 4px;
+  }
+  
+
+  .textLabelclass{
+    white-space:nowrap;
+    font-weight: 300;
+    text-shadow: 0 0 0.1em black, 0 0 0.1em black,
+          0 0 0.1em black,0 0 0.1em black,0 0 0.1em;
+    color: yellow;
+  }
+  .row,.container-fluid{
+      height: 100%;
+  }
+  p{
+      color: white;
+      font-size: 8pt;
+  }
+
+  .map, body, html { 
+    height: 100%; 
+    padding: 0; 
+    margin: 0; 
+    z-index: -10;
+  }
+  
+  .latlng {
+    position: fixed;
+    top: 30px;
+    right: 10px;
+    color: red;
+    z-index: 100000;
+    background: white;
+  }
+  .mat-drawer-container {
+    height: 100%;
+}
+.mat-drawer {
+    background-color: #193061;
+    width: 200px;
+    background: #49474a;
+    background: #290940;
+}
+.mat-button.icon_marging_left {
+
+    margin-left: 20px;
+}
+/deep/.mat-menu-panel {
+    max-width: 1280px;
+}
+.info{
+    width: 100%;
+    border: 1px solid white;
+}
+/deep/.cdk-overlay-pane {
+    top: 50px;
+}
+.mat-drawer-container{
+    background: #343436;
+}
+.mat-button {
+    color: white;
+}

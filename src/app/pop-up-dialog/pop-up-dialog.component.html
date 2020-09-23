@@ -1,0 +1,15 @@
+<kendo-window title="Please Add session name" *ngIf="this.PopUpOpen" [top]="10" [left]="100" 
+ (close)="AddNewSessionDialogClose()" [minWidth]="250" [width]="450" >
+  <form class="k-form" ref="form">
+
+      <label class="k-form-field">
+          <input class="k-textbox" placeholder="Enter Session Name" #sessionTextBox />
+      </label>
+
+      <div class="text-right">
+          <button type="button" class="k-button grayBtn" (click)="AddNewSessionDialogClose()">Cancel</button>
+          <button type="button" class="k-button k-primary grayBtn" 
+          (click)="AddNewSessionDialogSubmit(sessionTextBox,$event)">Submit</button>
+      </div>
+  </form>
+</kendo-window>

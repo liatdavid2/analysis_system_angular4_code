@@ -1,0 +1,102 @@
+<div class="contentBG">
+
+
+
+
+    <div class="row SubTitleBlackBg">
+        <h4 class="col-sm-8">Select session:</h4>
+        <div class="col-sm-4">
+            <input class="searchTextInput" [(ngModel)]="searchText" placeholder="enter search term here">
+        </div>
+    </div>
+
+
+
+
+    <div class="row">
+
+        <div class="container-fluid">
+            <div class="row" style="margin-bottom: 20px;border-bottom: 1px solid white;">
+                <div class="col-sm-5">
+                    <button kendoButton (click)="AddNewSessionDialogOpen()" id="AddBtn">+</button>
+                    <p id="AddTxt">Add New Session</p>
+                </div>
+
+            </div>
+            <!--Add session name Dialog-->
+            <kendo-window title="Please Add session name" *ngIf="AddNewSessionDialogOpened" (close)="AddNewSessionDialogClose()" [minWidth]="250" [width]="450">
+                <form class="k-form" ref="form">
+
+                    <label class="k-form-field">
+                        <input class="k-textbox" placeholder="Enter Session Name" #sessionTextBox />
+                    </label>
+
+                    <div class="text-right">
+                        <button type="button" class="k-button grayBtn" (click)="AddNewSessionDialogClose()">Cancel</button>
+                        <button type="button" class="k-button k-primary grayBtn" 
+                        (click)="AddNewSessionDialogSubmit(sessionTextBox,$event)">Submit</button>
+                    </div>
+                </form>
+            </kendo-window>
+            
+            <!--Rename session name Dialog-->
+            <kendo-window title="Please Update session name" *ngIf="RenameSessionDialogOpened" (close)="RenameSessionDialogClose()" [minWidth]="250" [width]="450">
+                <form class="k-form" ref="form">
+
+                    <label class="k-form-field">
+                        <input class="k-textbox" placeholder="Enter Session Name" #sessionTextBox />
+                    </label>
+
+                    <div class="text-right">
+                        <button type="button" class="k-button grayBtn" (click)="RenameSessionDialogClose()">Cancel</button>
+                        <button type="button" class="k-button k-primary grayBtn" 
+                        (click)="RenameSessionDialogCloseSubmit(sessionTextBox,$event,session)">Submit</button>
+                    </div>
+                </form>
+            </kendo-window>
+
+            
+        </div>
+
+
+        <div class="col-sm-6 col-md-3  col-xl-1 col-lg-2 " 
+        *ngFor="let session of sessions |async | filter : 'session_name' : searchText  ">
+            <div class="row">
+                <div class="col-sm-4">
+                    <button mat-icon-button [matMenuTriggerFor]="menu" class="MenuBtnWhite">
+                        <mat-icon>more_vert</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item class="MenuBtn" (click)="AddClustersToSession(session)" >
+                            <mat-icon>dialpad</mat-icon>
+                            <span>Add clusters to session</span>
+                        </button>
+                        <button mat-menu-item class="MenuBtn" (click)="DeleteSession(session)" >
+                            <mat-icon>delete</mat-icon>
+                            <span>delete</span>
+                        </button>
+                        <button mat-menu-item class="MenuBtn" (click)="RenameSessionDialogOpen(session)" >
+                            <mat-icon>rename</mat-icon>
+                            <span>rename</span>
+                        </button>
+                    </mat-menu>
+                </div>
+                <div class="col-sm-8">
+                    <img class="iconSize" #sessionImg src={{session.SessionImage}} (click)="StartEdit(session)">
+                </div>
+                <div class="col-sm-4"></div>
+                <div class="col-sm-8 text-center">
+                    <h5 #sessionName>{{session.session_name}}</h5>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--button mat-button matStepperNext class="grayBtn">Next</button>
+    <button (click)="StartEdit()" class="grayBtn">Start Edit</button-->
+
+
+
+
+
+</div>

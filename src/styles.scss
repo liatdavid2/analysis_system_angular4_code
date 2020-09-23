@@ -1,0 +1,145 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@progress/kendo-theme-default/scss/all";
+/*#sample{
+position: fixed;
+background: white;
+bottom: 0;
+width: 40%;
+z-index: 100000;
+}*/
+#sample{
+height: 100%;width:100%
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  //background: linear-gradient(black,#4e5f74, );
+  background: black;
+}
+html{
+  background: black;
+}
+
+
+.k-widget {
+color: white;
+background-color: #16222e;
+}
+.k-grid-header{
+color: white;
+background-color: #16222e;
+}
+.k-drag-clue, .k-grid-add-row, .k-grid-footer, .k-grid-header, .k-grid-toolbar, .k-grouping-header {
+color: white;
+background-color: transparent;
+
+}
+
+.k-grid tr:nth-child(even){
+  background-color: rgb(77, 93, 114);
+}
+
+.k-grid tr.k-state-selected{
+background-color: #747474;
+color: #33d6c8;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+  
+} /* this targets the default scrollbar (compulsory) */
+::-webkit-scrollbar-track {
+  background-color:#313d48;
+} /* the new scrollbar will have a flat appearance with the set background color */
+
+::-webkit-scrollbar-thumb {
+  background-color: #485765; 
+height: 50px;
+  border: 1px solid #485765;
+} /* this will style the thumb, ignoring the track */
+
+::-webkit-scrollbar-corner {
+  //height: 20px;
+  border-radius: 5px;
+  border: 1px solid #485765;
+  width: 90%;
+} /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */
+.k-grid tr.even { background-color: yellow; }
+.k-grid tr.odd { background-color: #41f4df; }
+
+.codeColumn{background-color: yellow; }
+
+.k-grid .no-padding {
+  padding: 0;
+}
+.k-grid th, .k-grid td {
+  padding:0;
+}
+
+gridster-item[_ngcontent-c2] {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+button .trumbowyg-em-button{
+
+
+  background-image: url("http://icons.iconarchive.com/icons/paomedia/small-n-flat/256/sign-check-icon.png");
+}
+
+
+.trumbowyg-box {
+  background: white;
+}
+
+
+
+.trumbowyg-box.trumbowyg-editor-visible.trumbowyg-textarea{
+  display: none;
+}
+
+.trumbowyg-box.trumbowyg-editor-visible {
+  .trumbowyg-textarea {
+      height: 1px !important;
+      width: 25%;
+      min-height: 0 !important;
+      padding: 0 !important;
+      background: none;
+      opacity: 0 !important;
+  }
+}
+.nicEdit-main{
+  background: white;
+}
+
+
+.mat-horizontal-content-container {
+  padding:0;
+}
+/deep/.mat-pseudo-checkbox {
+  border: 2px solid #1fbbd6;
+  border-radius: 0px;
+}
+.grayBtn {
+  background: linear-gradient(#44545e, #394954);
+  border: 3px solid #333f4b;
+  color: #bababa;
+  font-weight: bold;
+  border-radius: 25px;
+  height: 32px;
+  line-height: 0.5;
+}
+.grayBtn:hover {
+  background-image: none;
+  background-color: #74448d;
+  border-color: #74448d;
+  color: white;
+}

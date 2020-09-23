@@ -1,0 +1,140 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "project": {
+    "name": "angular-gridster2"
+  },
+  "apps": [
+    {
+      "root": "src",
+      "outDir": "demo",
+      "assets": [
+        "assets",
+        "favicon.ico",
+		 {
+          "glob": "icons.svg",
+          "input": "../node_modules/trumbowyg/dist/ui",
+          "output": "./dist/"
+        }
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "tsconfig.spec.json",
+      "prefix": "",
+      "styles": [
+        "theme.scss",
+		
+		
+		
+		 "../node_modules/highcharts/bootstrap.min.css",
+        "../node_modules/jquery-ui/jquery-ui.css",
+		"../node_modules/trumbowyg/dist/ui/trumbowyg.css",
+		"../node_modules/trumbowyg/dist/plugins/colors/ui/trumbowyg.colors.css",
+		"styles.scss",
+		
+		"../node_modules/highcharts/icon.css",
+
+		
+		"../node_modules/leaflet/leaflet.css",
+		"../node_modules/leaflet/MarkerCluster.css",
+		"../node_modules/leaflet/MarkerCluster.Default.css",
+		"../node_modules/leaflet/screen.css",
+     "../node_modules/Leaflet.label/leaflet.label.css",
+	  "../node_modules/leaflet/L.Control.ZoomBox.css"
+
+	 ],
+      "scripts": [ 
+	  	   "../node_modules/highcharts/jquery-3.3.1.js"	 ,
+		
+
+	  "../node_modules/trumbowyg/dist/trumbowyg.min.js",
+	  	  "../node_modules/trumbowyg/dist/plugins/pasteimage/trumbowyg.pasteimage.min.js",
+	  "../node_modules/trumbowyg/dist/plugins/cleanpaste/trumbowyg.cleanpaste.min.js",
+	  "../node_modules/trumbowyg/dist/plugins/template/trumbowyg.template.min.js",
+	  "../node_modules/trumbowyg/dist/plugins/table/trumbowyg.table.min.js",
+	  "../node_modules/trumbowyg/dist/plugins/allowtagsfrompaste/trumbowyg.allowtagsfrompaste.js",
+	  "../node_modules/trumbowyg/dist/plugins/lineheight/trumbowyg.lineheight.js",
+	  "../node_modules/trumbowyg/dist/plugins/history/trumbowyg.history.js",
+	  "../node_modules/trumbowyg/dist/plugins/colors/trumbowyg.colors.js",
+	  
+	  
+	  "../node_modules/highcharts/highcharts.js",
+	  "../node_modules/highcharts/boost.js",
+	  "../node_modules/highcharts/exporting.js",	  
+	  	  "../node_modules/highcharts/export-data.js",
+	  "../node_modules/highcharts/histogram-bellcurve.js",
+	  
+	   "../node_modules/highcharts/xrange.js",
+	  
+	  
+	  "../node_modules/highcharts/nicEdit-latest.js",
+	  
+	   "../node_modules/leaflet/realworld.50000.1.js", "../node_modules/leaflet/realworld.50000.2.js",
+	   	   "../node_modules/leaflet/leaflet-src.js",
+		   "../node_modules/leaflet/leaflet.markercluster-src.js",
+		   "../node_modules/leaflet/l.ellipse.min.js",
+		   
+		   
+	    "../node_modules/Leaflet.label/BaseMarkerMethods.js",
+		"../node_modules/Leaflet.label/CircleMarker.Label.js",
+		
+		    "../node_modules/Leaflet.label/copyright.js",
+		"../node_modules/Leaflet.label/FeatureGroup.Label.js",
+		    "../node_modules/Leaflet.label/intro.js",
+			
+		"../node_modules/Leaflet.label/Label.js",
+		    "../node_modules/Leaflet.label/Leaflet.label.js",
+		"../node_modules/Leaflet.label/Map.Label.js",
+		    "../node_modules/Leaflet.label/Marker.Label.js",
+		"../node_modules/Leaflet.label/outro.js",
+ "../node_modules/Leaflet.label/Path.Label.js",
+ "../node_modules/Leaflet/L.Control.ZoomBox.min.js",
+  "../node_modules/Leaflet/leaflet-lasso.min.js",
+    "../node_modules/Leaflet/L.Deflate.js",
+	"../node_modules/Leaflet/hamburch.js",
+	
+	"../node_modules/Leaflet/leaflet.geometryutil.min.js"
+	  ],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+  ],
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
+  },
+  "lint": [
+    {
+      "project": "src/tsconfig.app.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "src/tsconfig.spec.json",
+      "exclude": "**/node_modules/**"
+    },
+    {
+      "project": "e2e/tsconfig.e2e.json",
+      "exclude": "**/node_modules/**"
+    }
+  ],
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+  "serve":{"port":7000},
+    "styleExt": "scss",
+    "component": {},
+	    "build": {
+      "showCircularDependencies": false
+    }
+	
+  }
+}

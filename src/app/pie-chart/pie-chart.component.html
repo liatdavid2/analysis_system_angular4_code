@@ -1,0 +1,120 @@
+<!--button (click)="SelectedPoints()">SelectedPoints</button>
+<div #containerPieChart ></div-->
+
+    <mat-drawer-container class="example-container">
+
+        <div class="example-sidenav-content" style="z-index:10000;    float: right;">
+          <button type="button" mat-button (click)="drawer.toggle()">
+            <mat-icon>menu</mat-icon>
+      
+          </button>
+        </div>
+        <div #containerPieChart ></div>
+        <mat-drawer #drawer class="example-sidenav" mode="side" position="end">
+          <p matLine >
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+      
+              <mat-icon class="icon_marging_left">more_vert</mat-icon>
+            </button>
+          </p>
+          <p matLine>
+            <mat-menu #menu="matMenu">
+      
+              <button mat-menu-item (click)="measureDistance()">
+                <span>Measure Distance</span>
+              </button>
+      
+              <button mat-menu-item (click)="addItemByCluserIdAndType(cluster,2)">
+                <span>Change Map</span>
+              </button>
+              <button mat-menu-item (click)="addItemByCluserIdAndType(cluster,3)">
+                <span>Center map about a selected point</span>
+              </button>
+              <button mat-menu-item (click)="addItemByCluserIdAndType(cluster,4)">
+                <span>Lasso</span>
+              </button>
+              <hr>
+              <button mat-menu-item [matMenuTriggerFor]="menu2">
+                <span>Lasso - Options and filters</span>
+                <mat-menu #menu2="matMenu">
+      
+                  <button mat-menu-item (click)="addItemByCluserIdAndType(cluster,6)">
+                    <span>Create cluster based on selected elements</span>
+                  </button>
+      
+                  <button mat-menu-item (click)="addItemByCluserIdAndType(cluster,2)">
+                    <span>Highlight</span>
+                </button>
+
+                  <button mat-menu-item (click)="addItemByCluserIdAndType(cluster,4)">
+                    <span>Open in a map</span>
+                  </button>
+      
+
+      
+                  <button mat-menu-item (click)="addItemByCluserIdAndType(cluster,7)">
+                    <span>High-Light</span>
+                  </button>
+                  <button mat-menu-item (click)="addItemByCluserIdAndType(cluster,7)">
+                    <span>Remove from cluster</span>
+                  </button>
+                </mat-menu>
+      
+      
+              </button>
+              <hr>
+              <button mat-menu-item (click)="loadselectedfromtable()">
+                <span>load selected points</span>
+              </button>
+      
+              <button mat-menu-item (click)="addItemByCluserIdAndType(cluster,7)">
+                <span>Add Textual Annotation</span>
+              </button>
+              <button mat-menu-item (click)="addItemByCluserIdAndType(cluster,7)">
+                <span>Delete Textual Annotation</span>
+              </button>
+              <button mat-menu-item (click)="addItemByCluserIdAndType(cluster,7)">
+                <span>Draw Silde</span>
+              </button>
+              <button mat-menu-item (click)="addItemByCluserIdAndType(cluster,7)">
+                <span>Report</span>
+              </button>
+      
+            </mat-menu>
+      
+            <span> {{clusterView}} </span>
+      
+          </p>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12">
+      
+                <label class="colorWhite">select x axis: </label>
+                <select #selectElemX (change)="Change_X_Axis(selectElemX.value)">
+                  <option value="Catagory">Catagory</option>
+                  <option value="Number">Number</option>
+                </select>
+                <hr>
+                <button (click)="getNextPageFromServer()">>></button>
+                <button (click)="getPrevPageFromServer()">
+                  <<</button>
+                    <label class="colorWhite">{{startServerPage}} - {{endServerPage}} first result</label>
+      
+              </div>
+      
+            </div>
+      
+          </div>
+      
+        </mat-drawer>
+      
+      
+      
+      </mat-drawer-container>
+      
+      
+      <mat-sidenav-container>
+        <mat-sidenav #sidenav2>
+      
+        </mat-sidenav>
+      </mat-sidenav-container>
