@@ -16,7 +16,7 @@ Back-end : C# webapi
 <img src="https://github.com/liatdavid2/analysis_system_angular4_code/blob/master/src/assets/images/screenshot/drag_ang_drop_change_order.png?raw=true" width="750" >
 
 <img src="https://github.com/liatdavid2/analysis_system_angular4_code/blob/master/src/assets/images/screenshot/change_scale_and_order.png?raw=true" width="750" >
-<h5>Tablet views:</h5>
+<h5>Tablet views - vertical and horizontal:</h5>
 <img src="https://github.com/liatdavid2/analysis_system_angular4_code/blob/master/src/assets/images/screenshot/%E2%80%8F%E2%80%8Ftablet.PNG?raw=true" width="550" >
 
 <img src="https://github.com/liatdavid2/analysis_system_angular4_code/blob/master/src/assets/images/screenshot/%E2%80%8F%E2%80%8Ftablet2.PNG?raw=true" width="350" >
