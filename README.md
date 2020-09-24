@@ -1,6 +1,12 @@
+# Analysis System
+An app where travelers can find a local guide at a desired destination in order to enjoy from an authentic tour.
 
+Technologies:\
+Front-end : Angular, Scss ,HTML5, Material-ui .\
+Back-end : C# webapi
 <p align="center">
   <img src="https://github.com/liatdavid2/analysis_system_angular4_code/blob/master/src/assets/images/screenshot/%E2%80%8F%E2%80%8Fdashboard.PNG?raw=true" width="750" >
+   View of popular destinations:
   <img src="https://github.com/liatdavid2/analysis_system_angular4_code/blob/master/src/assets/images/screenshot/pie_chart.PNG?raw=true" width="750" >
   
    <img src="https://github.com/liatdavid2/analysis_system_angular4_code/blob/master/src/assets/images/screenshot/%E2%80%8F%E2%80%8Ffull.PNG?raw=true" width="750" >
