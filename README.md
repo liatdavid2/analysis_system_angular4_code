@@ -19,5 +19,5 @@ Back-end : C# webapi
 <h5>Tablet views:</h5>
 <img src="https://github.com/liatdavid2/analysis_system_angular4_code/blob/master/src/assets/images/screenshot/%E2%80%8F%E2%80%8Ftablet.PNG?raw=true" width="550" >
 
-<img src="https://github.com/liatdavid2/analysis_system_angular4_code/blob/master/src/assets/images/screenshot/%E2%80%8F%E2%80%8Ftablet2.PNG?raw=true" width="550" >
+<img src="https://github.com/liatdavid2/analysis_system_angular4_code/blob/master/src/assets/images/screenshot/%E2%80%8F%E2%80%8Ftablet2.PNG?raw=true" width="350" >
 
