@@ -1,10 +1,10 @@
 # Analysis System
-An app where travelers can find a local guide at a desired destination in order to enjoy from an authentic tour.
+A dashboard app where you can upload a CSV file and view the data in graphs visualization.
 
 Technologies:\
 Front-end : Angular, Scss ,HTML5, Material-ui .\
 Back-end : C# webapi
-<p align="center">
+
   <img src="https://github.com/liatdavid2/analysis_system_angular4_code/blob/master/src/assets/images/screenshot/%E2%80%8F%E2%80%8Fdashboard.PNG?raw=true" width="750" >
    View of popular destinations:
   <img src="https://github.com/liatdavid2/analysis_system_angular4_code/blob/master/src/assets/images/screenshot/pie_chart.PNG?raw=true" width="750" >
@@ -12,4 +12,4 @@ Back-end : C# webapi
    <img src="https://github.com/liatdavid2/analysis_system_angular4_code/blob/master/src/assets/images/screenshot/%E2%80%8F%E2%80%8Ffull.PNG?raw=true" width="750" >
     <img src="https://github.com/liatdavid2/analysis_system_angular4_code/blob/master/src/assets/images/screenshot/drag_ang_drop_change_order.png?raw=true" width="750" >
      <img src="https://github.com/liatdavid2/analysis_system_angular4_code/blob/master/src/assets/images/screenshot/change_scale_and_order.png?raw=true" width="750" >
-</p>
+
