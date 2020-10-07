@@ -1,7 +1,7 @@
 # Analysis System
 <h4>App URL: https://liatdavid2.github.io/angular_analysis_system: </h4> 
-<h6>A dashboard app where you can view the data in graphs visualization, 
-The charts can present in UI large amount of data points  100000 - 1000000 .</h6>
+<h4>A dashboard app where you can view the data in graphs visualization, 
+The charts can present in UI large amount of data points  100000 - 1000000 .</h4>
 
 Technologies:\
 Front-end : Angular, Scss ,HTML5, Material-ui .\
