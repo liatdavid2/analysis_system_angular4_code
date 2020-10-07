@@ -1,14 +1,15 @@
 # Analysis System
 <h4>App URL: https://liatdavid2.github.io/angular_analysis_system: </h4> 
-A dashboard app where you can upload a CSV file and view the data in graphs visualization.
+A dashboard app where you can view the data in graphs visualization,\
+The charts can present in UI large amount of data points  100000 - 1000000.\
 
 Technologies:\
 Front-end : Angular, Scss ,HTML5, Material-ui .\
 Back-end : C# webapi
 
-<h5>Responsive dashboard with a list of your data analysis from CSV files:</h5>
+<h5>Responsive dashboard with a list of your data analysis from db:</h5>
 <img src="https://github.com/liatdavid2/analysis_system_angular4_code/blob/master/src/assets/images/screenshot/%E2%80%8F%E2%80%8Fdashboard.PNG?raw=true" width="750" >
-<h5>Responsive dashboard with a list of your data analysis from CSV files:</h5>
+<h5>Responsive dashboard with a list of your data analysis from dbs:</h5>
 <img src="https://github.com/liatdavid2/analysis_system_angular4_code/blob/master/src/assets/images/screenshot/pie_chart.PNG?raw=true" width="750" >
 <h5>Dashboard views are piechart, activity graph, scatter graph, and histogram:</h5>  
 <img src="https://github.com/liatdavid2/analysis_system_angular4_code/blob/master/src/assets/images/screenshot/%E2%80%8F%E2%80%8Ffull.PNG?raw=true" width="750" >
